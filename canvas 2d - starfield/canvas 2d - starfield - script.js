@@ -1,5 +1,5 @@
 
-var canvas = document.getElementById("canvas");
+var canvas = document.getElementById("canvas 2d - starfield");
 var c = canvas.getContext("2d");
 
 var numStars = 1000;
@@ -58,9 +58,11 @@ function drawStars() {
         initializeStars();
     }
 
-    c.fillStyle = "black";
+    c.fillStyle = "red";
     c.fillRect(0, 0, canvas.width, canvas.height);
-    c.fillStyle = "yellow";
+    c.fillStyle = "black";
+    c.fillRect(2, 2, canvas.width-2, canvas.height-2);
+    c.fillStyle = "white";
     for (i = 0; i < numStars; i++) {
         star = stars[i];
 
