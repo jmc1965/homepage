@@ -78,9 +78,9 @@ function initializeStars() {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             z: Math.random() * canvas.width,
-            r: rrnd,
-            g: grnd,
-            b: brnd
+            r: Math.random() * rgbmax,
+            g: Math.random() * rgbmax,
+            b: Math.random() * rgbmax
         }
         
         stars.push(star);
@@ -123,7 +123,7 @@ function drawStars() {
         pixelY += centerY;
         pixelRadius = radius * (focalLength / star.z);
 
-        c.fillStyle = 'rgb($star.r,$star.g,$star.b )' ;
+        c.fillStyle = 'rgb(' + star.r + ', ' + star.g + ', ' + star.b + ', 1.0)'
         c.beginPath();
         c.arc(pixelX, pixelY, pixelRadius, 0, 2 * Math.PI);
         c.fill();
