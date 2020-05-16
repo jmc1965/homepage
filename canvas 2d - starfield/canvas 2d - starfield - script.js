@@ -2,6 +2,10 @@
 var canvas = document.getElementById("canvas 2d - starfield");
 var c = canvas.getContext("2d");
 
+var canvas2 = document.getElementById("canvas 2d - starfield - control");
+var cc = canvas2.getContext("2d");
+
+
 var numStars = 1000;
 var radius = 1;
 var focalLength = canvas.width;
@@ -25,6 +29,7 @@ function executeFrame() {
         requestAnimFrame(executeFrame);
     moveStars();
     drawStars();
+    drawInfo();
 }
 function colorStars(Krnd, rrnd, grnd, brnd) {
     Krnd = Krnd / 100;
@@ -112,8 +117,11 @@ function drawStars() {
     c.fillStyle = "red";
     c.fillRect(0, 0, canvas.width, canvas.height);
     c.fillStyle = "black";
-    c.fillRect(2, 2, canvas.width-2, canvas.height-2);
-   
+    c.fillRect(2, 2, canvas.width - 2, canvas.height - 2);
+
+    cc.fillstyle = "redblue":
+    cc.fillRect(0, 0, canvas.width, canvas.height);
+
     for (i = 0; i < numStars; i++) {
         star = stars[i];
 
@@ -131,9 +139,9 @@ function drawStars() {
     }
 }
 
-canvas.addEventListener("mousemove", function (e) {
-    focalLength = e.x;
-});
+ //canvas.addEventListener("mousemove", function (e) {
+ //    focalLength = e.x;
+//});
 
 // Kick off the animation when the mouse enters the canvas
 canvas.addEventListener('mouseover', function (e) {
